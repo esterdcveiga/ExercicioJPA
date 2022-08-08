@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="htp://www.thymeleaf.org">
+	<head>
+		<meta charset ="UTF-8">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	</head>
+	<body>
+		<div class="container">
+			<h1>Editar Catioro</h1>
+		<form th:action="@{/cadastro}" method="post" th:object="${cachorro}">
+			<label>id</label>
+			<input type="text" th:field="*{id}" readonly/>
+			<label>nome</label>
+			<input id="idnome" type="text" placeholder="Informe o nome do doguinho" th:field="*{nome}" />
+			<label>fone</label>
+			<input id="idraca" type="text" placeholder="Informe a raça do doguinho" th:field="*{raca}"/>
+			<label>email</label>
+			<input id="idporte" type="text" placeholder="Informe o nome do doguinho" th:field="*{porte}" />
+			<button class="btn waves-effect waves-light pink">Salvar</button>
+		</form>
+		</div>
+	</body>
+</html>

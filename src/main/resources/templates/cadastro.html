@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="htp://www.thymeleaf.org">
+	<head>
+		<meta charset ="UTF-8">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	</head>
+	<body>
+		<nav>
+		    <div class="nav-wrapper pink">
+		      <a href="#" class="brand-logo right"></a>
+		      <ul id="nav-mobile" class="left hide-on-med-and-down">
+		        <li><a th:href="@{/}">Home</a></li>
+		      </ul>
+		    </div>
+	 	 </nav>
+		<div class="container">
+			<h1>Cadastrar Catioro</h1>
+			<form th:action="@{/cadastro}" method="post">
+				<label>nome</label>
+				<input id="idnome" type="text" placeholder="Informe o nome do doguinho" name="nome"/>
+				<label>raca</label>
+				<input id="idraca" type="text" placeholder="Informe a raça do doguinho" name="raca"/>
+				<label>porte</label>
+				<input id="idporte" type="text" placeholder="Informe o porte do doguinho" name="porte" />
+				<button class="btn waves-effect waves-light pink">Salvar</button>
+			</form>
+		</div>
+	</body>
+</html>

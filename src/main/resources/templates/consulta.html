@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="htp://www.thymeleaf.org">
+	<head>
+		<meta charset ="UTF-8">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	</head>
+	<body>
+		<nav>
+		    <div class="nav-wrapper pink">
+		      <a href="#" class="brand-logo right"></a>
+		      <ul id="nav-mobile" class="left hide-on-med-and-down">
+		        <li><a th:href="@{/}">Home</a></li>
+		      </ul>
+		    </div>
+	 	 </nav>
+		<div class="container">
+			<h1>Consulta de Catioros</h1>
+		<table class="centered striped">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Nome</th>
+					<th>Raça</th>
+					<th>Porte</th>
+					<th>Ações</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="cachorro: ${cachorros}">
+					<td th:text="*{cachorro.id}"/>
+					<td th:text="*{cachorro.nome}"/>
+					<td th:text="*{cachorro.raca}"/>
+					<td th:text="*{cachorro.porte}"/>
+					<td>
+						<a th:href="@{'/consulta/'+${cachorro.id}}">editar</a>
+						<a th:href="@{'/delete/'+${cachorro.id}}">excluir</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		  <a th:href="@{/cadastro}" class="btn-floating btn-large waves-effect waves-light pink"><i class="material-icons">add</i></a>
+		</div>
+	</body>
+</html>
